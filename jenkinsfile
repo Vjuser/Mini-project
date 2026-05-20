@@ -11,7 +11,7 @@ pipeline {
 
         stage('Check Connectivity') {
             steps {
-                sh 'ansible web -i inventory.ini -m ping'
+                sh 'ansible web -i inventory.txt -m ping'
             }
         }
 
