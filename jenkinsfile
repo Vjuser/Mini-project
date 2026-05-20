@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Verify Ansible') {
+            steps {
+                sh 'ansible --version'
+            }
+        }
+
+        stage('Check Connectivity') {
+            steps {
+                sh 'ansible all -i inventory.ini -m ping'
+            }
+        }
+
+        stage('Deploy NGINX') {
+            steps {
+                sh 'ansible-playbook -i inventory.ini nginx-playbook.yml'
+            }
+        }
+
+    }
+}
