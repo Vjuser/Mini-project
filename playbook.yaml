@@ -1,5 +1,5 @@
 ---
-- name: Install NGINX on webservers
+- name: Install NGINX on web
   hosts: web
   become: yes
 
