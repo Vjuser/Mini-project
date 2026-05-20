@@ -1,6 +1,6 @@
 ---
-- name: Install NGINX on web
-  hosts: web
+- name: Install NGINX on all
+  hosts: all
   become: yes
 
   tasks:
